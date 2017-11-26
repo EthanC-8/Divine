@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 const YouTube = require("discord-youtube-api");
 const client = new Discord.Client();
-const token = "MzcwNTkwNTMxOTM3NjMyMjc2.DMpS-Q.fOeBqlmqCdqgQmAfgaaIhczLUhY";
 const prefix = "!!";
 
 function play(connection, message) {
@@ -257,4 +256,4 @@ client.on('msg', message => {
   }
 });
 
-client.login('MzcwNTkwNTMxOTM3NjMyMjc2.DMpS-Q.fOeBqlmqCdqgQmAfgaaIhczLUhY');
+client.login(process.env.BOT_TOKEN);
