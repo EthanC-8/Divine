@@ -4,6 +4,12 @@ const YouTube = require("discord-youtube-api");
 const client = new Discord.Client();
 const token = "MzcwNTkwNTMxOTM3NjMyMjc2.DMpS-Q.fOeBqlmqCdqgQmAfgaaIhczLUhY";
 const prefix = "!!";
+const sql = require("sqlite");
+sql.open("./score.sqlite");
+const Cleverbot = require("cleverbot-node");
+const clbot = new Cleverbot;
+clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
+
 
 function play(connection, message) {
   var server = servers[message.guild.id];
@@ -40,13 +46,13 @@ var flipcoin = [
   "Tales!."
 ];
 var fun = [
-  "!!Hello - Say Hello.. \n !!Ping - Pong! \n !!Bored - Solution.. \n !!Fortune - Fortune Teller \n !!Flipcoin - Head or Tale.. \n !!Dab - Dab on Haters!.. \n !!Shoot - Shoot Someone \n !!Kill - Murderder Someone \n !!007 - James Bond!! \n !!Roast - Roast someone.. \n !!DE - Evil souls..",
+  "*To talk to Divine bot msg him in DM ** \n !!Hello - Say Hello.. \n !!Ping - Pong! \n !!Bored - Solution.. \n !!Fortune - Fortune Teller \n !!Flipcoin - Head or Tale.. \n !!Dab - Dab on Haters!.. \n !!Shoot - Shoot Someone \n !!Kill - Murderder Someone \n !!007 - James Bond!! \n !!Roast - Roast someone..",
 ];
 var musichelp = [
   "!!play [URl] - To add a song to queue.. \n !!skip - To skip the current song.. \n !!stop - To stop the music bot! \n  \n More music features to be added soon.. \n   "
 ]
 var divineinfo = [
-  "!!Divine - Who is Divine?.. \n !!Creator - Creator of bot.. \n !!Version - Current Bot Version \n For any Question or help please Contact @Ethan8#1061 "
+  "!!Divine - Who is Divine?..  \n !!Uptime - To check bot's uptime...  \n !!Creator - Creator of bot.. \n !!Version - Current Bot Version \n For any Question or help please Contact @Ethan8#1061 "
 ]
 var modhelp = [
   "!!Warn - Warn a User.. \n !!kick - Kick a user out of server.. \n !!clear - Clear number of messages.. "
@@ -63,19 +69,20 @@ var emcolor = [
   "0xEEF813",
   "0xF7A100"
 ];
-
+var chathelp = [
+  "!!Level - Check ur level.. \n !!Points - Check ur points.. \n !!Rank - Check your rank.. "
+]
 
 
 //--------------------------------------
 client.on('ready', () => {
   console.log('Online!');
-  client.user.setGame('Getting updates..')
+  client.user.setGame('With Eshan..')
   client.user.setStatus("online")
 });
 
 client.on("guildMemberAdd", function(member) {
-  member.guild.channels.find("name", "general").send(member.toString() + "Welcome to the Commumnity!! Have a Great time here! :heart:");
-
+  member.guild.channels.find("name", "general").send(member.toString() + "Welcome to the Commumnity!! Have a Great time here! <3");
    member.addRole(member.guild.roles.find("name", "DM"));
 });
 
@@ -85,12 +92,64 @@ client.on("guildMemberAdd", function(member) {
 client.on('message', message => {
   console.log(`(General) ${message.author.id}: ${message.content}`);
  if (message.author.equals(client.user))return;
+ //-----------------CLEVERBOT-----------------
+ if (message.channel.type === "dm") {
+  clbot.write(message.content, (response) => {
+    message.channel.startTyping();
+    setTimeout(() => {
+      message.channel.send(response.output).catch(console.error);
+      message.channel.stopTyping();
+    }, Math.random() * (1 - 3) + 1 * 1000);
+  });
+}
+    //-----------------CLEVERBOT-----------------
  if (!message.content.startsWith(prefix)) return;
       
       var args = message.content.substring(prefix.length).split(" ");
       console.log(`(Divine) ${message.author.id}: ${message.content}`);
-      
-      
+
+      //----------------[SQL]--------------
+sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+  if (!row) {
+    sql.run("INSERT INTO scores (userId, points, level, rank) VALUES (?, ?, ?, ?)", [message.author.id, 1, 0, "Member"]);
+  } else {
+    let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
+    if (curLevel > row.level) {
+      row.level = curLevel;
+      sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);
+      message.reply(`You've leveled up to level **${curLevel}**! Congratz!!`);
+    }
+    sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
+  }
+}).catch(() => {
+  console.error;
+  sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER, rank TEXT)").then(() => {
+    sql.run("INSERT INTO scores (userId, points, level, rank) VALUES (?, ?, ?, ?)", [message.author.id, 1, 0, "Member"]);
+  });
+});
+if (!message.content.startsWith(prefix)) return;
+
+if (message.content.startsWith(prefix + "level")) {
+  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+    if (!row) return message.reply("Your current level is 0");
+    message.reply(`Your current level is ${row.level}`);
+  });
+} else
+
+if (message.content.startsWith(prefix + "points")) {
+  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+    if (!row) return message.reply("sadly you do not have any points yet!");
+    message.reply(`you currently have ${row.points} points, good going!`);
+  });
+}
+if (message.content.startsWith(prefix + "rank")) {
+  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+    if (!row) return message.reply("Your are not ranked yet :sad:");
+    message.reply(`Your rank is ${row.rank} in the server!`);
+  });
+}
+  //----------------[SQL]--------------
+
        switch (args[0].toLowerCase()) {
         case"ping":
         var embed = new Discord.RichEmbed()
@@ -125,12 +184,12 @@ client.on('message', message => {
         message.channel.send(flipcoin[Math.floor(Math.random() * flipcoin.length)]);
         break;
         case"help":
-        message.channel.send('-=[Divine Commands]=- \n !!fun - Fun Commands.. \n !!Music - Music Commands.. \n !!Info - About Divine Bot..\n !!MHelp - Moderators Commands ');
+        message.channel.send('-=[Divine Commands]=- \n !!fun - Fun Commands.. \n !!Music - Music Commands.. \n !!Chathelp - For your server profile \n !!Info - About Divine Bot..\n !!MHelp - Moderators Commands ');
         break;
         case"music":
         message.channel.send(message.author+", Commands Sent to Dm")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Music Commands]=-", "Music feature is down for maintenance")
+        .addField("-=[Music Commands]=-", "!"+musichelp)
         .setColor(+emcolor[Math.floor(Math.random() * emcolor.length)])
         message.author.send(embed);
         break;
@@ -141,10 +200,17 @@ client.on('message', message => {
         .setColor(+emcolor[Math.floor(Math.random() * emcolor.length)])
         message.author.send(embed);;
         break;
+        case"chathelp":
+        message.channel.send(message.author+", Commands Sent to your Dm")
+        var embed = new Discord.RichEmbed()
+        .addField("-=[Chat Commands]=-", "!"+chathelp)
+        .setColor(+emcolor[Math.floor(Math.random() * emcolor.length)])
+        message.author.send(embed);;
+        break;
         case"fun":
         message.channel.send(message.author+", Commands Sent to Dm")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Fun Commands]=-", "!"+fun)
+        .addField("-=[Fun Commands]=-", "*"+fun)
         .setColor(+emcolor[Math.floor(Math.random() * emcolor.length)])
         message.author.send(embed);;
         break;
@@ -180,6 +246,9 @@ client.on('message', message => {
         case"creator":
         message.channel.send(" @Ethan8 Created this bot while breaking his head on walls :'D..");         
         break;
+        case"uptime":
+            message.channel.send((process.uptime())+" Seconds.");
+            break;
 
         //-----------=[Music Commands]=----------
 
@@ -260,10 +329,13 @@ client.on('message', message => {
         break;
         //-----------=[Moderator Commands]=----------
         default:
-        console.log("No such command");
+        console.log("Not a case");
         return;
       }
 });
+
+
+  
 //------[Async]--------------------------------
 async () => {
     const User = await client.fetchUser(id);
