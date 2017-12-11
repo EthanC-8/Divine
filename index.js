@@ -40,7 +40,7 @@ var flipcoin = [
   "Tales!."
 ];
 var fun = [
-  "!!Hello - Say Hello.. \n !!Ping - Pong! \n !!Bored - Solution.. \n !!Fortune - Fortune Teller \n !!Flipcoin - Head or Tale.. \n !!Dab - Dab on Haters!.. \n !!Shoot - Shoot Someone \n !!Kill - Murderder Someone \n !!007 - James Bond!! \n !!Roast - Roast someone..",
+  "!!Hello - Say Hello.. \n !!Ping - Pong! \n !!Bored - Solution.. \n !!Fortune - Fortune Teller \n !!Flipcoin - Head or Tale.. \n !!Dab - Dab on Haters!.. \n !!Shoot - Shoot Someone \n !!Kill - Murderder Someone \n !!007 - James Bond!! \n !!Roast - Roast someone.. \n !!DE - Evil souls..",
 ];
 var musichelp = [
   "!!play [URl] - To add a song to queue.. \n !!skip - To skip the current song.. \n !!stop - To stop the music bot! \n  \n More music features to be added soon.. \n   "
@@ -48,7 +48,7 @@ var musichelp = [
 var divineinfo = [
   "!!Divine - Who is Divine?.. \n !!Creator - Creator of bot.. \n !!Version - Current Bot Version \n For any Question or help please Contact @Ethan8#1061 "
 ]
-var musichelp = [
+var modhelp = [
   "!!Warn - Warn a User.. \n !!kick - Kick a user out of server..\n   "
 ]
 var servers = {};
@@ -69,12 +69,12 @@ var emcolor = [
 //--------------------------------------
 client.on('ready', () => {
   console.log('Online!');
-  client.user.setGame('With Eshan..')
+  client.user.setGame('Getting updates..')
   client.user.setStatus("online")
 });
 
 client.on("guildMemberAdd", function(member) {
-  member.guild.channels.find("name", "general").send(member.toString() + "Welcome to the Commumnity!! Have a Great time here! <3");
+  member.guild.channels.find("name", "general").send(member.toString() + "Welcome to the Commumnity!! Have a Great time here! :heart:");
 
    member.addRole(member.guild.roles.find("name", "DM"));
 });
@@ -130,7 +130,7 @@ client.on('message', message => {
         case"music":
         message.channel.send(message.author+", Commands Sent to Dm")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Music Commands]=-", "!"+musichelp)
+        .addField("-=[Music Commands]=-", "Music feature is down for maintenance")
         .setColor(+emcolor[Math.floor(Math.random() * emcolor.length)])
         message.author.send(embed);
         break;
