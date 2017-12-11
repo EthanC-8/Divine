@@ -49,7 +49,7 @@ var divineinfo = [
   "!!Divine - Who is Divine?.. \n !!Creator - Creator of bot.. \n !!Version - Current Bot Version \n For any Question or help please Contact @Ethan8#1061 "
 ]
 var modhelp = [
-  "!!Warn - Warn a User.. \n !!kick - Kick a user out of server..\n   "
+  "!!Warn - Warn a User.. \n !!kick - Kick a user out of server.. \n !!clear - Clear number of messages.. "
 ]
 var servers = {};
 var testc = "Pass";
@@ -254,7 +254,7 @@ client.on('message', message => {
           message.reply(+args[1]+" Messages have deleted..");
         }
       else {
-        message.reply(" Please Enter number of messages to delete ");
+        message.reply(" Please Enter numeric digit of messages to delete ");
       }
     }
         break;
