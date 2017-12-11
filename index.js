@@ -224,7 +224,7 @@ if (message.content.startsWith(prefix + "rank")) {
         break;
         case"version":
         var embed = new Discord.RichEmbed()
-        .addField("Version -", "4.15.2")
+        .addField("Version -", "5.1")
         .setColor(+emcolor[Math.floor(Math.random() * emcolor.length)])
         message.channel.send(embed);
         break;
