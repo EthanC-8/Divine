@@ -219,7 +219,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         case'say':
         const sayMessage = args.join(" ");
         message.delete().catch(O_o=>{}); 
-        message.channel.send(sayMessage.subString(3, 50));
+        message.channel.send(sayMessage.substring(3, 50));
         break;
         case"kill":
         if (args[1]) message.channel.send(message.author + " has killed " + message.mentions.members.first()+"....*RIP*");
