@@ -44,7 +44,7 @@ var flipcoin = [
   "Tales!."
 ]; //FLipcoin - Head Tales
 var fun = [
-  "d!Hello - Say Hello.. \n d!Bored - Solution.. \n d!Fortune - Fortune Teller \n d!Flipcoin - Head or Tale.. \n d!Dab - Dab on Haters!.. \n d!Shoot - Shoot Someone \n d!Kill** - Murderder Someone \n d!007 - James Bond!! \n d!Roast - Roast someone..```",
+  "d!Hello - Say Hello.. \n d!Bored - Solution.. \n d!Fortune - Fortune Teller \n d!Flipcoin - Head or Tale.. \n d!Dab - Dab on Haters!.. \n d!Shoot - Shoot Someone \n d!Kill - Murderder Someone \n d!007 - James Bond!! \n d!Roast - Roast someone..```",
 ]; //Fun Commmadns.
 var musichelp = [
   "*Notice - Music Features might not stable.. Stay tuned for a update!**\n``` d!play [URl] - To add a song to queue.. \n d!skip - To skip the current song.. \n d!stop - To stop the music bot! ``` \n More music features to be added soon.. "
