@@ -116,6 +116,10 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
   message.channel.send('♡ (◕‿◕✿)')
 }else if (message.content == ('(ʘ言ʘ╬)')) {
   message.channel.send('≧☉_☉≦')
+}else if (message.content == ('Cleanza')) {
+  message.channel.send('Cleanza :heart_eyes: Iza :revolving_hearts: Cleaner ')
+}else if (message.content == ('cleanza')) {
+  message.channel.send('Cleanza :heart_eyes: Iza :revolving_hearts: Cleaner ')
 }
 
  if (!message.content.startsWith(prefix)) return;
