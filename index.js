@@ -56,7 +56,7 @@ var modhelp = [
   "```**d!Warn** - Warn a User.. \n **d!kick** - Kick a user out of server.. \n **d!clear** - Clear number of messages..``` "
 ] //Moderator commands.
 var socialhelp = [
-  '```**d!Profile** - To look at profile of a user.  \n **d!Avatar** - Avatar of a user.```'
+  'd!Profile - To look at profile of a user.  \n d!Avatar - Avatar of a user.```'
 ]
 
 var servers = {};
@@ -158,7 +158,7 @@ bot.on('message', message => {
         case"social":
         message.channel.send(message.author+", Commands Sent to your Dm")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Social Commands]=-", "!"+socialhelp)
+        .addField("-=[Social Commands]=-", "!!!"+socialhelp)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);
         break;
