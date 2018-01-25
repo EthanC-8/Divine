@@ -217,9 +217,16 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         else message.channel.send("Whom to shoot? !!Shoot [Name]").catch(console.error);
         break;
         case'say':
-        const sayMessage = args.join(" ");
+        let modRole = message.guild.roles.find("name", "[Contributor]");
+        if(message.member.roles.has(modRole.id)){
+          const sayMessage = args.join(" ");
         message.delete().catch(O_o=>{}); 
         message.channel.send(sayMessage.substring(3, 50));
+          else message.channel.send("Format-  d!say [Message]").catch(console.error);
+        } 
+           else {
+             message.channel.send('You dont have Permission to use this Command);
+           }
         break;
         case"kill":
         if (args[1]) message.channel.send(message.author + " has killed " + message.mentions.members.first()+"....*RIP*");
@@ -388,6 +395,9 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           if (args[1] , args[2]) message.channel.send(message.mentions.members.first()+", You have been warned for breaking a server's law..");
           else message.channel.send("Format-  !!Warn [@user] [Reason]").catch(console.error);
         } 
+           else {
+             message.channel.send('You dont have Permission to use this Command);
+           }
         break;
         case "kick":
         // let modRolek = message.guild.roles.find("name", "Moderator")
