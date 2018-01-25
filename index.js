@@ -219,10 +219,12 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         case'say':
         let modRole = message.guild.roles.find("name", "[Contributor]");
         if(message.member.roles.has(modRole.id)){
+          if (args[1]){
           const sayMessage = args.join(" ");
         message.delete().catch(O_o=>{}); 
         message.channel.send(sayMessage.substring(3, 50));
-          else message.channel.send("Format-  d!say [Message]").catch(console.error);
+          }
+          else { message.channel.send("Format-  d!say [Message]").catch(console.error); }
         } 
            else {
              message.channel.send('You dont have Permission to use this Command);
