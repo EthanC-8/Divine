@@ -217,8 +217,8 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         else message.channel.send("Whom to shoot? !!Shoot [Name]").catch(console.error);
         break;
         case'say':
-        let modRole = message.guild.roles.find("name", "[Contributor]");
-        if(message.member.roles.has(modRole.id)){
+        let modRolee = message.guild.roles.find("name", "[Contributor]");
+        if(message.member.roles.has(modRolee.id)){
           if (args[1]){
           const sayMessage = args.join(" ");
         message.delete().catch(O_o=>{}); 
