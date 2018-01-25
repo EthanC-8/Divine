@@ -79,7 +79,7 @@ var chathelp = [
 //--------------------------------------
 bot.on('ready', () => {
   console.log('Online!');
-  bot.user.setActivity('With Eshan..')
+  bot.user.setActivity('With Updates..')
   bot.user.setStatus("online")
 });
 
@@ -110,49 +110,7 @@ bot.on('message', message => {
       
       var args = message.content.substring(prefix.length).split(" ");
       console.log(`(Divine) ${message.author.id}: ${message.content}`);
-
-//       //----------------[SQL]--------------
-// sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
-//   if (!row) {
-//     sql.run("INSERT INTO scores (userId, points, level, rank) VALUES (?, ?, ?, ?)", [message.author.id, 1, 0, "Member"]);
-//   } else {
-//     let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
-//     if (curLevel > row.level) {
-//       row.level = curLevel;
-//       sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);
-//       message.reply(`You've leveled up to level **${curLevel}**! Congratz!!`);
-//     }
-//     sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
-//   }
-// }).catch(() => {
-//   console.error;
-//   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER, rank TEXT)").then(() => {
-//     sql.run("INSERT INTO scores (userId, points, level, rank) VALUES (?, ?, ?, ?)", [message.author.id, 1, 0, "Member"]);
-//   });
-// });
-// if (!message.content.startsWith(prefix)) return;
-
-// if (message.content.startsWith(prefix + "level")) {
-//   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
-//     if (!row) return message.reply("Your current level is 0");
-//     message.reply(`Your current level is ${row.level}`);
-//   });
-// } else
-
-// if (message.content.startsWith(prefix + "points")) {
-//   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
-//     if (!row) return message.reply("sadly you do not have any points yet!");
-//     message.reply(`you currently have ${row.points} points, good going!`);
-//   });
-// }
-// if (message.content.startsWith(prefix + "rank")) {
-//   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
-//     if (!row) return message.reply("Your are not ranked yet :sad:");
-//     message.reply(`Your rank is ${row.rank} in the server!`);
-//   });
-// }
-//   //----------------[SQL]--------------
-
+  
        switch (args[0].toLowerCase()) {
          
         case"ping":
