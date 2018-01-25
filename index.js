@@ -155,6 +155,13 @@ bot.on('message', message => {
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);
         break;
+        case"social":
+        message.channel.send(message.author+", Commands Sent to your Dm")
+        var embed = new Discord.RichEmbed()
+        .addField("-=[Social Commands]=-", "!"+socialhelp)
+        .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
+        message.author.send(embed);
+        break;
         case"mhelp":
         message.channel.send(message.author+", Commands Sent to Dm")
         var embed = new Discord.RichEmbed()
