@@ -117,9 +117,9 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
 }else if (message.content == ('(ʘ言ʘ╬)')) {
   message.channel.send('≧☉_☉≦')
 }else if (message.content == ('Cleanza')) {
-  message.channel.send('Cleanza :heart_eyes: Iza :revolving_hearts: Cleaner ')
+  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More! :angry: ')
 }else if (message.content == ('cleanza')) {
-  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More :Angry:')
+  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More! :angry: ')
 }
 
  if (!message.content.startsWith(prefix)) return;
