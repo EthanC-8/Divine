@@ -114,6 +114,8 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
   message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
 }else if (message.content == ('ღゝ◡╹)ノ♡')) {
   message.channel.send('♡ (◕‿◕✿)')
+}else if (message.content == ('(ʘ言ʘ╬)')) {
+  message.channel.send('≧☉_☉≦')
 }
 else {
   return;
@@ -402,8 +404,7 @@ else {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1]) {
           let messagecount = parseInt(args[1]);
-          var msggggg = messagecount+1;
-          message.channel.fetchMessages({limit: msggggg}).then(messages => message.channel.bulkDelete(messages));                      
+          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));                      
           message.reply(+args[1]+" Messages has been deleted..");
         }
       else {
