@@ -119,7 +119,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
 }else if (message.content == ('Cleanza')) {
   message.channel.send('Cleanza :heart_eyes: Iza :revolving_hearts: Cleaner ')
 }else if (message.content == ('cleanza')) {
-  message.channel.send('Cleanza :heart_eyes: Iza :revolving_hearts: Cleaner ')
+  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More :Angry:')
 }
 
  if (!message.content.startsWith(prefix)) return;
