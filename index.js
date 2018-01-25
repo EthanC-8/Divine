@@ -217,9 +217,9 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         else message.channel.send("Whom to shoot? !!Shoot [Name]").catch(console.error);
         break;
         case'say':
-        const sayMessage = args[1].join(" ");
+        const sayMessage = args.join(" ");
         message.delete().catch(O_o=>{}); 
-        message.channel.send(sayMessage);
+        message.channel.send(sayMessage.subString(3, 50);
         break;
         case"kill":
         if (args[1]) message.channel.send(message.author + " has killed " + message.mentions.members.first()+"....*RIP*");
