@@ -222,7 +222,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           if (args[1]){
           const sayMessage = args.join(" ");
         message.delete().catch(O_o=>{}); 
-        message.channel.send(sayMessage.substring(3, 50));
+        message.channel.send(sayMessage.substring(3, 5000));
           }
           else { message.channel.send("Format-  d!say [Message]").catch(console.error); }
         } 
