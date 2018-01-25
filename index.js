@@ -47,7 +47,7 @@ var fun = [
   "d!Hello - Say Hello.. \n d!Bored - Solution.. \n d!Fortune - Fortune Teller \n d!Flipcoin - Head or Tale.. \n d!Dab - Dab on Haters!.. \n d!Shoot - Shoot Someone \n d!Kill** - Murderder Someone \n d!007 - James Bond!! \n d!Roast - Roast someone..```",
 ]; //Fun Commmadns.
 var musichelp = [
-  "Notice - Music Features might not stable.. Stay tuned for a update!\n``` d!play [URl] - To add a song to queue.. \n d!skip - To skip the current song.. \n d!stop - To stop the music bot! ``` \n More music features to be added soon.. "
+  "*Notice - Music Features might not stable.. Stay tuned for a update!**\n``` d!play [URl] - To add a song to queue.. \n d!skip - To skip the current song.. \n d!stop - To stop the music bot! ``` \n More music features to be added soon.. "
 ] //Music Commands..
 var divineinfo = [
   "d!Divine - Divine?..  \n d!Uptime - To check bot's uptime.  \n d!Ping - Check latency and responce time of bot.  \n d!Creator - Creator of bot.. \n d!Version - Current Bot Version \n``` For any Question or help please Contact @Ethan8#1061 "
@@ -144,7 +144,7 @@ bot.on('message', message => {
         case"music":
         message.channel.send(message.author+", Commands has Sent to you DM")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Music Commands]=-", "``` "+musichelp)
+        .addField("-=[Music Commands]=-", "*"+musichelp)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);
         break;
