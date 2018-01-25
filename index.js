@@ -2,12 +2,13 @@ const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 const YouTube = require("discord-youtube-api");
 const bot = new Discord.Client();
+const token = "MzcwNTkwNTMxOTM3NjMyMjc2.DMpS-Q.fOeBqlmqCdqgQmAfgaaIhczLUhY";
 const prefix = "d!";
 const sql = require("sqlite");
 sql.open("./score.sqlite");
-// const Cleverbot = require("cleverbot-node");
-// const clbot = new Cleverbot;
-// clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
+const Cleverbot = require("cleverbot-node");
+const clbot = new Cleverbot;
+clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
 
 
 function play(connection, message) {
@@ -44,7 +45,7 @@ var flipcoin = [
   "Tales!."
 ]; //FLipcoin - Head Tales
 var fun = [
-  "d!Hello - Say Hello.. \n d!Bored - Solution.. \n d!Fortune - Fortune Teller \n d!Flipcoin - Head or Tale.. \n d!Dab - Dab on Haters!.. \n d!Shoot - Shoot Someone \n d!Kill - Murderder Someone \n d!007 - James Bond!! \n d!Roast - Roast someone..```",
+  "You can chat with bot d!ChatHelp  \n ```**d!Hello** - Say Hello.. \n **d!Bored** - Solution.. \n **d!Fortune** - Fortune Teller \n **d!Flipcoin** - Head or Tale.. \n **d!Dab** - Dab on Haters!.. \n **d!Shoot** - Shoot Someone \n **d!Kill** - Murderder Someone \n **d!007** - James Bond!! \n **d!Roast** - Roast someone..```",
 ]; //Fun Commmadns.
 var musichelp = [
   "*Notice - Music Features might not stable.. Stay tuned for a update!**\n``` d!play [URl] - To add a song to queue.. \n d!skip - To skip the current song.. \n d!stop - To stop the music bot! ``` \n More music features to be added soon.. "
@@ -87,18 +88,35 @@ bot.on('ready', () => {
 bot.on('message', message => {
   console.log(`(General) ${message.author.id}: ${message.content}`);
  if (message.author.equals(bot.user))return;
-//  //-----------------CLEVERBOT-----------------
-//  var botidf = '<@370590531937632276>';
-//  if (message.content.startsWith(botidf)) {
-//   clbot.write(message.content, (response) => {
-//     message.channel.startTyping();
-//     setTimeout(() => {
-//       message.channel.send(response.output).catch(console.error);
-//       message.channel.stopTyping();
-//     }, Math.random() * (1 - 3) + 1 * 1000);
-//   });
-// }
-//     //-----------------CLEVERBOT-----------------
+ //-----------------CLEVERBOT-----------------
+ var botidf = '<@370590531937632276>';
+ if (message.content.startsWith(botidf)) {
+  clbot.write(message.content, (response) => {
+    message.channel.startTyping();
+    setTimeout(() => {
+      message.channel.send(response.output).catch(console.error);
+      message.channel.stopTyping();
+    }, Math.random() * (1 - 3) + 1 * 1000);
+  });
+}
+    //-----------------CLEVERBOT-----------------
+if (message.content == ('(╯°□°）╯︵ ┻━┻')){
+  message.channel.send('┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ) Aweee! Nuu!');
+}else if (message.content == ('coland')) {
+      message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
+}else if (message.content == ('CoLand')) {
+  message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
+}else if (message.content == ('Coaland')) {
+  message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
+}else if (message.content == ('CoAland')) {
+  message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
+}else if (message.content == ('COLAND')) {
+  message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
+}
+else {
+  return;
+}
+
  if (!message.content.startsWith(prefix)) return;
       
       var args = message.content.substring(prefix.length).split(" ");
@@ -260,7 +278,6 @@ bot.on('message', message => {
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.channel.send(embed);
         break;
-
         //-----------=[Music Commands]=----------
 
         case 'play':
@@ -383,8 +400,9 @@ bot.on('message', message => {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1]) {
           let messagecount = parseInt(args[1]);
-          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));                      
-          message.reply(+args[1]+" Messages have deleted..");
+          var msggggg = messagecount+1;
+          message.channel.fetchMessages({limit: msggggg}).then(messages => message.channel.bulkDelete(messages));                      
+          message.reply(+args[1]+" Messages has been deleted..");
         }
       else {
         message.reply(" Please Enter numeric digit of messages to delete ");
@@ -396,22 +414,6 @@ bot.on('message', message => {
         console.log("Not a case");
         return;
       }
-});
-
-
-  
-//------[Async]--------------------------------
-async () => {
-    const User = await bot.fetchUser(id);
-    // Do something with the User object
-}
-//---------------------------------------------
-
-//Messages.--------------------------------
-bot.on('msg', message => {
- if (msg.content == "nigga") {
-  msg.channel.sendMessage("Watch your Language please..");
-  }
 });
 
 bot.login(process.env.BOT_TOKEN);
