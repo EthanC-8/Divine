@@ -217,7 +217,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         else message.channel.send("Whom to shoot? !!Shoot [Name]").catch(console.error);
         break;
         case'say':
-        const sayMessage = args.join(" ");
+        const sayMessage = args[1].join(" ");
         message.delete().catch(O_o=>{}); 
         message.channel.send(sayMessage);
         break;
