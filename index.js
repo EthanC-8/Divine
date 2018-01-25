@@ -398,7 +398,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           else message.channel.send("Format-  !!Warn [@user] [Reason]").catch(console.error);
         } 
            else {
-             message.channel.send('You dont have Permission to use this Command);
+             message.channel.send('You dont have Permission to use this Command');
            }
         break;
         case "kick":
