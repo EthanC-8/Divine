@@ -227,7 +227,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           else { message.channel.send("Format-  d!say [Message]").catch(console.error); }
         } 
            else {
-             message.channel.send('You dont have Permission to use this Command);
+             message.channel.send('You dont have Permission to use this Command');
            }
         break;
         case"kill":
