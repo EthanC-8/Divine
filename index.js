@@ -3,7 +3,6 @@ const YTDL = require("ytdl-core");
 const YouTube = require("discord-youtube-api");
 var S = require("String");
 const bot = new Discord.Client();
-const token = "MzcwNTkwNTMxOTM3NjMyMjc2.DMpS-Q.fOeBqlmqCdqgQmAfgaaIhczLUhY";
 const prefix = "d!";
 const sql = require("sqlite");
 sql.open("./score.sqlite");
