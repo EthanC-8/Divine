@@ -112,6 +112,8 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
   message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
 }else if (message.content == ('COLAND')) {
   message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ')
+}else if (message.content == ('ღゝ◡╹)ノ♡')) {
+  message.channel.send('♡ (◕‿◕✿)')
 }
 else {
   return;
