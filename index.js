@@ -5,9 +5,9 @@ const bot = new Discord.Client();
 const prefix = "d!";
 const sql = require("sqlite");
 sql.open("./score.sqlite");
-const Cleverbot = require("cleverbot-node");
-const clbot = new Cleverbot;
-clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
+// const Cleverbot = require("cleverbot-node");
+// const clbot = new Cleverbot;
+// clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
 
 
 function play(connection, message) {
@@ -94,18 +94,18 @@ bot.on('ready', () => {
 bot.on('message', message => {
   console.log(`(General) ${message.author.id}: ${message.content}`);
  if (message.author.equals(bot.user))return;
- //-----------------CLEVERBOT-----------------
- var botidf = '<@370590531937632276>';
- if (message.content.startsWith(botidf)) {
-  clbot.write(message.content, (response) => {
-    message.channel.startTyping();
-    setTimeout(() => {
-      message.channel.send(response.output).catch(console.error);
-      message.channel.stopTyping();
-    }, Math.random() * (1 - 3) + 1 * 1000);
-  });
-}
-    //-----------------CLEVERBOT-----------------
+//  //-----------------CLEVERBOT-----------------
+//  var botidf = '<@370590531937632276>';
+//  if (message.content.startsWith(botidf)) {
+//   clbot.write(message.content, (response) => {
+//     message.channel.startTyping();
+//     setTimeout(() => {
+//       message.channel.send(response.output).catch(console.error);
+//       message.channel.stopTyping();
+//     }, Math.random() * (1 - 3) + 1 * 1000);
+//   });
+// }
+//     //-----------------CLEVERBOT-----------------
  if (!message.content.startsWith(prefix)) return;
       
       var args = message.content.substring(prefix.length).split(" ");
