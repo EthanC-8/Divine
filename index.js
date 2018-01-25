@@ -79,7 +79,7 @@ var chathelp = [
 //--------------------------------------
 bot.on('ready', () => {
   console.log('Online!');
-  bot.user.setActivity('With Updates..')
+  bot.user.setGame('With Updates..')
   bot.user.setStatus("online")
 });
 
