@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 const YouTube = require("discord-youtube-api");
-var S = require("String");
 const bot = new Discord.Client();
 const prefix = "d!";
 const sql = require("sqlite");
@@ -112,7 +111,50 @@ bot.on('message', message => {
       var args = message.content.substring(prefix.length).split(" ");
       console.log(`(Divine) ${message.author.id}: ${message.content}`);
 
-       switch (args[0].toLowerCase()) { 
+//       //----------------[SQL]--------------
+// sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+//   if (!row) {
+//     sql.run("INSERT INTO scores (userId, points, level, rank) VALUES (?, ?, ?, ?)", [message.author.id, 1, 0, "Member"]);
+//   } else {
+//     let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
+//     if (curLevel > row.level) {
+//       row.level = curLevel;
+//       sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);
+//       message.reply(`You've leveled up to level **${curLevel}**! Congratz!!`);
+//     }
+//     sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
+//   }
+// }).catch(() => {
+//   console.error;
+//   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER, rank TEXT)").then(() => {
+//     sql.run("INSERT INTO scores (userId, points, level, rank) VALUES (?, ?, ?, ?)", [message.author.id, 1, 0, "Member"]);
+//   });
+// });
+// if (!message.content.startsWith(prefix)) return;
+
+// if (message.content.startsWith(prefix + "level")) {
+//   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+//     if (!row) return message.reply("Your current level is 0");
+//     message.reply(`Your current level is ${row.level}`);
+//   });
+// } else
+
+// if (message.content.startsWith(prefix + "points")) {
+//   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+//     if (!row) return message.reply("sadly you do not have any points yet!");
+//     message.reply(`you currently have ${row.points} points, good going!`);
+//   });
+// }
+// if (message.content.startsWith(prefix + "rank")) {
+//   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+//     if (!row) return message.reply("Your are not ranked yet :sad:");
+//     message.reply(`Your rank is ${row.rank} in the server!`);
+//   });
+// }
+//   //----------------[SQL]--------------
+
+       switch (args[0].toLowerCase()) {
+         
         case"ping":
         var embed = new Discord.RichEmbed()
         .addField(new Date().getTime() - message.createdTimestamp + "ms. :alarm_clock: ", bot.ping+"ms. :heartbeat:" )
@@ -248,7 +290,6 @@ bot.on('message', message => {
         break;
         case'profile':
         var memberz = message.mentions.members.first()||message.guild.members.get(args[0]);
-        var ctdat = memberz.user.createdAt;    var str = S(ctdat);
         if (!message.mentions.members.first()||message.guild.members.get(args[0])) return message.reply("Please provide a vaild Mention or USER ID");
         var pfp = memberz.user.avatarURL;
         var embed = new Discord.RichEmbed() 
@@ -260,7 +301,7 @@ bot.on('message', message => {
         .addField('User ID', memberz.user.id)
         .addField('Last Message ', memberz.user.lastMessage)
         .addField('Status',`${memberz.user.presence.status}`)
-        .addField('Account Created on', str.substring(0,24))
+        .addField('Account Created on', `${memberz.user.createdAt}`.substring(0,24))
         // .addBlankField(true)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.channel.send(embed);
