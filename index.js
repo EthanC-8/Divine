@@ -44,16 +44,16 @@ var flipcoin = [
   "Tales!."
 ]; //FLipcoin - Head Tales
 var fun = [
-  "You can chat with bot d!ChatHelp  \n ```**d!Hello** - Say Hello.. \n **d!Bored** - Solution.. \n **d!Fortune** - Fortune Teller \n **d!Flipcoin** - Head or Tale.. \n **d!Dab** - Dab on Haters!.. \n **d!Shoot** - Shoot Someone \n **d!Kill** - Murderder Someone \n **d!007** - James Bond!! \n **d!Roast** - Roast someone..```",
+  "d!Hello - Say Hello.. \n d!Bored - Solution.. \n d!Fortune - Fortune Teller \n d!Flipcoin - Head or Tale.. \n d!Dab - Dab on Haters!.. \n d!Shoot - Shoot Someone \n d!Kill** - Murderder Someone \n d!007 - James Bond!! \n d!Roast - Roast someone..```",
 ]; //Fun Commmadns.
 var musichelp = [
-  "* Notice - Music Features might not stable.. Stay tuned for a update! *\n```**d!play [URl]** - To add a song to queue.. \n **d!skip** - To skip the current song.. \n **d!stop** - To stop the music bot! ``` \n More music features to be added soon.. "
+  "* Notice - Music Features might not stable.. Stay tuned for a update! *\n```d!play [URl] - To add a song to queue.. \n d!skip - To skip the current song.. \n d!stop - To stop the music bot! ``` \n More music features to be added soon.. "
 ] //Music Commands..
 var divineinfo = [
-  "```**d!Divine** - Divine?..  \n **d!Uptime** - To check bot's uptime.  \n **d!Ping** - Check latency and responce time of bot.  \n **d!Creator** - Creator of bot.. \n **d!Version** - Current Bot Version \n``` For any Question or help please Contact @Ethan8#1061 "
+  "d!Divine - Divine?..  \n d!Uptime - To check bot's uptime.  \n d!Ping - Check latency and responce time of bot.  \n d!Creator - Creator of bot.. \n d!Version - Current Bot Version \n``` For any Question or help please Contact @Ethan8#1061 "
 ] //Bot Info
 var modhelp = [
-  "```**d!Warn** - Warn a User.. \n **d!kick** - Kick a user out of server.. \n **d!clear** - Clear number of messages..``` "
+  "d!Warn - Warn a User.. \n d!kick - Kick a user out of server.. \n d!clear - Clear number of messages..``` "
 ] //Moderator commands.
 var socialhelp = [
   'd!Profile - To look at profile of a user.  \n d!Avatar - Avatar of a user.```'
@@ -82,13 +82,6 @@ bot.on('ready', () => {
   bot.user.setGame('With Updates..')
   bot.user.setStatus("online")
 });
-
-// bot.on("guildMemberAdd", function(member) {
-//   member.guild.channels.find("name", "general").send(member.toString() + "Welcome to the Commumnity!! Have a Great time here! <3");
-//    member.addRole(member.guild.roles.find("name", "DM"));
-// });
-
-//--------------------------------------
 
 //Commands.-------------------------------
 bot.on('message', message => {
@@ -124,7 +117,7 @@ bot.on('message', message => {
         break;
         case"de":
         var embed = new Discord.RichEmbed()
-        .addField("Devil :revolving_hearts: Angel", "     :angel::smiling_imp:" )
+        .addField("Doris :revolving_hearts: Ethan", "     :angel::smiling_imp:" )
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.channel.send(embed);
         break;
@@ -132,7 +125,7 @@ bot.on('message', message => {
         message.channel.send("Thats life, i cant do anything in that xD");
         break;
         case"divine":
-        message.channel.send("I am super duper Divine Bottt!! Type");
+        message.channel.send("I am super duper Divine Bottt!! Type d!help for all the commands");
         break;
         case"fortune":
         if (args[1]) message.channel.send(fortune[Math.floor(Math.random() * fortune.length)]);
@@ -151,35 +144,31 @@ bot.on('message', message => {
         case"music":
         message.channel.send(message.author+", Commands has Sent to you DM")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Music Commands]=-", "!"+musichelp)
+        .addField("-=[Music Commands]=-", "``` "+musichelp)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);
         break;
         case"social":
         message.channel.send(message.author+", Commands Sent to your Dm")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Social Commands]=-", "```"+socialhelp)
+        .addField("-=[Social Commands]=-", "``` "+socialhelp)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);
         break;
         case"mhelp":
         message.channel.send(message.author+", Commands Sent to Dm")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Moderaor Commands]=-", "!"+modhelp)
+        .addField("-=[Moderaor Commands]=-", "``` "+modhelp)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);;
         break;
         case"chatbot":
-        message.channel.send(message.author+", Commands Sent to your Dm")
-        var embed = new Discord.RichEmbed()
-        .addField("-=[Chat bot]=-", "To chat Divine bot use @Divine#9969 [msg] \n For example. @Divine#9969 I love You <3 ")
-        .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
-        message.author.send(embed);;
+        message.reply("Chatbot has been taken down for maintance..")
         break;
         case"fun":
         message.channel.send(message.author+", Commands Sent to Dm")
         var embed = new Discord.RichEmbed()
-        .addField("-=[Fun Commands]=-", "*"+fun)
+        .addField("-=[Fun Commands]=-", "``` "+fun)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);;
         break;
@@ -187,7 +176,7 @@ bot.on('message', message => {
         case"info":
         message.channel.send(message.author+", Commands Sent to Dm").catch(console.error)
         var embed = new Discord.RichEmbed()
-        .addField("-=[About me]=-", "!"+divineinfo)
+        .addField("-=[About me]=-", "``` "+divineinfo)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.author.send(embed);;
         break;
