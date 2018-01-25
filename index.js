@@ -117,9 +117,6 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
 }else if (message.content == ('(ʘ言ʘ╬)')) {
   message.channel.send('≧☉_☉≦')
 }
-else {
-  return;
-}
 
  if (!message.content.startsWith(prefix)) return;
       
