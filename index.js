@@ -145,7 +145,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         case"chair":
         var pewdiechairmeme = 'https://media1.tenor.com/images/ecedecd45958c923a44a20bb04e1997c/tenor.gif?itemid=10722056';
         var embed = new Discord.RichEmbed()
-        .addField(`Me - Oe ${author.name}, Do u got a Chair bro ??`, `${author.name} - Yes, i am sitting on one rn`)
+        .addField(`Me - Oe ${message.author.name}, Do u got a Chair bro ??`, `${message.author.name} - Yes, i am sitting on one rn`)
         .setImage(pewdiechairmeme)
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.channel.send(embed);
