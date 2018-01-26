@@ -238,7 +238,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         break;
         case"shoot":
         if (args[1]) message.channel.send(message.author + " (╯°□°)--︻╦╤─ - - - " + message.mentions.members.first());
-        else message.channel.send("Whom to shoot? !!Shoot [Name]").catch(console.error);
+        else message.channel.send("Whom to shoot? d!Shoot [Name]").catch(console.error);
         break;
         case'say':
         let modRolee = message.guild.roles.find("name", "[Contributor]");
@@ -256,7 +256,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         break;
         case"kill":
         if (args[1]) message.channel.send(message.author + " has killed " + message.mentions.members.first()+"....*RIP*");
-        else message.channel.send("Who to kill? !!kill [Name]").catch(console.error);
+        else message.channel.send("Who to kill? d!kill [Name]").catch(console.error);
         break;
         case"007":
         message.channel.send("̿̿  ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з=( ͡° ͜ʖ ͡°)=ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿  ");         
@@ -420,7 +420,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
 //         if(message.member.roles.has(modRole.id)){
            if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1] , args[2]) message.channel.send(message.mentions.members.first()+", You have been warned for breaking a server's law..");
-          else message.channel.send("Format-  !!Warn [@user] [Reason]").catch(console.error);
+          else message.channel.send("Format-  d!Warn [@user] [Reason]").catch(console.error);
         } 
            else {
              message.channel.send('You dont have Permission to use this Command');
@@ -430,7 +430,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         // let modRolek = message.guild.roles.find("name", "Moderator")
         // if(message.member.roles.has(modRolek.id)){
         if (message.member.hasPermission("KICK_MEMBERS")) {
-        if(message.mentions.members.size == 0) { return message.reply("Please mention a user to kick !!kick [@user]");}
+        if(message.mentions.members.size == 0) { return message.reply("Please mention a user to kick d!kick [@user]");}
         let kickmember = message.guild.member(message.mentions.members.first()+message.channel.send(message.mentions.members.first()+", has been kicked."));
         if(!kickmember){return message.reply("That user does not seems vaild");}
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) { return message.channel.send("I dont have the permission (KICK_MEMBER) to do this..");}
