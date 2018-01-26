@@ -132,8 +132,9 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
        switch (args[0].toLowerCase()) {
          
         case"ping":
+        var botzping = bot.ping.substring(0, 5);
         var embed = new Discord.RichEmbed()
-        .addField(new Date().getTime() - message.createdTimestamp + "ms. :alarm_clock: ", (bot.ping).substring(0,4)+"ms. :heartbeat:" )
+        .addField(new Date().getTime() - message.createdTimestamp + "ms. :alarm_clock: ", botzping+"ms. :heartbeat:" )
         .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
         message.channel.send(embed);
         break;
