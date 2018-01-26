@@ -416,8 +416,9 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
 
        //-----------=[Moderator Commands]=----------
         case "warn":
-        let modRole = message.guild.roles.find("name", "[Moderator]");
-        if(message.member.roles.has(modRole.id)){
+//         let modRole = message.guild.roles.find("name", "[Moderator]");
+//         if(message.member.roles.has(modRole.id)){
+           if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1] , args[2]) message.channel.send(message.mentions.members.first()+", You have been warned for breaking a server's law..");
           else message.channel.send("Format-  !!Warn [@user] [Reason]").catch(console.error);
         } 
