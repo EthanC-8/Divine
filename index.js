@@ -122,6 +122,18 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
   message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More! :angry: ')
 }else if (message.content == ('(ノಠ益ಠ)ノ彡┻━┻')) {
   message.channel.send('┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ) Aweee! #LeaveTablesAlone..')
+}else if (message.content == ('(ノಠ益ಠ)ノ彡┻━┻')) {
+  message.channel.send('┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ) Aweee! #LeaveTablesAlone..')
+}else if (message.content == ('kalishan')) {
+  message.channel.send('Kalishan?? Well, its a love Story of Kalimzoo :heart: KishanSital')
+}else if (message.content == ('kalishan')) {
+  message.channel.send('Kalishan?? Well, its a love Story of Kalimzoo :heart: KishanSital')
+}else if (message.content == ('Kalishan')) {
+  message.channel.send('Kalishan?? Well, its a love Story of Kalimzoo :heart: KishanSital')
+}else if (message.content == ('KaliShan')) {
+  message.channel.send('Kalishan?? Well, its a love Story of Kalimzoo :heart: KishanSital')
+}else if (message.content == ('KALISHAN')) {
+  message.channel.send('Kalishan?? Well, its a love Story of Kalimzoo :heart: KishanSital')
 }
 
  if (!message.content.startsWith(prefix)) return;
