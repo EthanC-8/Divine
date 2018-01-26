@@ -120,6 +120,8 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
   message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More! :angry: ')
 }else if (message.content == ('cleanza')) {
   message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More! :angry: ')
+}else if (message.content == ('(ノಠ益ಠ)ノ彡┻━┻')) {
+  message.channel.send('┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ) Aweee! Dont be angry on Inocent Tables..')
 }
 
  if (!message.content.startsWith(prefix)) return;
