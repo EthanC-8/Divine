@@ -6,9 +6,9 @@ const token = "MzcwNTkwNTMxOTM3NjMyMjc2.DMpS-Q.fOeBqlmqCdqgQmAfgaaIhczLUhY";
 const prefix = "d!";
 const sql = require("sqlite");
 sql.open("./score.sqlite");
-// const Cleverbot = require("cleverbot-node");
-// const clbot = new Cleverbot;
-// clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
+const Cleverbot = require("cleverbot-node");
+const clbot = new Cleverbot;
+clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
 
 
 function play(connection, message) {
