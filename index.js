@@ -117,9 +117,9 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
 }else if (message.content == ('(ʘ言ʘ╬)')) {
   message.channel.send('≧☉_☉≦')
 }else if (message.content == ('Cleanza')) {
-  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More!')
+  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner')
 }else if (message.content == ('cleanza')) {
-  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner No More!')
+  message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner')
 }else if (message.content == ('(ノಠ益ಠ)ノ彡┻━┻')) {
   message.channel.send('┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ) Aweee! #LeaveTablesAlone..')
 }else if (message.content == ('(ノಠ益ಠ)ノ彡┻━┻')) {
