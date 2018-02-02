@@ -100,7 +100,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'ty':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1]){message.delete().catch(O_o=>{});message.channel.send('**Solved**, Thanks for Reporting '+message.mentions.members.first())}
-          else{message.reply(', Usage - d!ty [Mention]')}
+          else{message.reply(' Usage - d!ty [Mention]')}
           } 
              else {
                message.channel.send('You dont have Permission to use this Command');
@@ -109,7 +109,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'ss':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
             if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Cropped screenshots are not accepted..')}
-            else{message.reply(', Usage - d!ss [Mention]')}
+            else{message.reply(' Usage - d!ss [Mention]')}
             } 
                else {
                  message.channel.send('You dont have Permission to use this Command');
@@ -118,7 +118,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'inv':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
             if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', You have submitted an False report, Case Closed.')}
-            else{message.reply(', Usage - d!inv [Mention]')}
+            else{message.reply(' Usage - d!inv [Mention]')}
             } 
                else {
                  message.channel.send('You dont have Permission to use this Command');
@@ -127,7 +127,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'proof':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
             if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Please provid a valid Proof')}
-            else{message.reply(', Usage - d!proof [Mention]')}
+            else{message.reply(' Usage - d!proof [Mention]')}
             } 
                else {
                  message.channel.send('You dont have Permission to use this Command');
