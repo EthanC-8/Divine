@@ -118,6 +118,69 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           console.log(`(Divine) ${message.author.id}: ${message.content}`);
       
            switch (args[0].toLowerCase()) {
+    //-=-=-=-=-=-=-=-=-=-=-FrostMods
+          case'ty':
+          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+          if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Thank for Reporting, Your problem has been solved..')}
+          else{message.reply(', Usage - d!ty [Mention]')}
+          } 
+             else {
+               message.channel.send('You dont have Permission to use this Command');
+             }
+          break;
+          case'ss':
+          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Cropped screenshots are not accepted..')}
+            else{message.reply(', Usage - d!ss [Mention]')}
+            } 
+               else {
+                 message.channel.send('You dont have Permission to use this Command');
+               }
+          break;
+          case'inv':
+          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', You have submitted an False report, Case Closed.')}
+            else{message.reply(', Usage - d!inv [Mention]')}
+            } 
+               else {
+                 message.channel.send('You dont have Permission to use this Command');
+               }
+          break;
+          case'proof':
+          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Please provid a valid Proof')}
+            else{message.reply(', Usage - d!proof [Mention]')}
+            } 
+               else {
+                 message.channel.send('You dont have Permission to use this Command');
+               }
+          break;
+          case'mod':
+          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+             message.delete().catch(O_o=>{}); message.channel.send('T-mods do not have banning perms, Please wait for a @Moderator to tend to it. ')
+            } 
+               else {
+                 message.channel.send('You dont have Permission to use this Command');
+               }
+          break;
+          case'general':
+          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+             message.delete().catch(O_o=>{}); message.channel.send('Please move to <#250021074559827968> for chatting..')
+            } 
+               else {
+                 message.channel.send('You dont have Permission to use this Command');
+               }
+          break;
+          case'support':
+          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            message.delete().catch(O_o=>{});message.channel.send('Please move to <#250249087679594496> for Reporting..')
+            } 
+               else {
+                 message.channel.send('You dont have Permission to use this Command');
+               }
+          break;
+
+//-=-=-=-=-FrostRealms
             case"ping":
             var botpppt = bot.ping.toString();
             var botzping = botpppt.substring(0, 5);
