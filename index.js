@@ -98,7 +98,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
            switch (args[0].toLowerCase()) {
     //-=-=-=-=-=-=-=-=-=-=-FrostMods
           case'ty':
-          if (message.member.hasPermission("MANAGE_MESSAGES")) {
+          if (args[1]==message.member.hasPermission("MANAGE_MESSAGES")) {
           if (message.mentions.members.first()){message.delete().catch(O_o=>{});message.channel.send('**Solved**, Thanks for Reporting '+message.mentions.members.first())}
           else{message.reply(' Usage - d!ty [Mention]')}
           } 
