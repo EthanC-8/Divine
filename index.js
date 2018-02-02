@@ -62,16 +62,6 @@ var socialhelp = [
 
 var servers = {};
 var testc = "Pass"; //For testing commands..
-var emcolor = [
-  "0x00FDDF",
-  "0x05E463",
-  "0x05E4B5",
-  "0x0FDD00",
-  "0x5E00DD",
-  "0x3F2C5A",
-  "0xEEF813",
-  "0xF7A100"
-];
 var chathelp = [
   "!!Level - Check ur level.. \n !!Points - Check ur points.. \n !!Rank - Check your rank.. "
 ]
@@ -88,18 +78,6 @@ bot.on('ready', () => {
 bot.on('message', message => {
   console.log(`(General) ${message.author.id}: ${message.content}`);
  if (message.author.equals(bot.user))return;
- //-----------------CLEVERBOT-----------------
-//  var botidf = '<@370590531937632276>';
-//  if (message.content.startsWith(botidf)) {
-//   clbot.write(message.content, (response) => {
-//     message.channel.startTyping();
-//     setTimeout(() => {
-//       message.channel.send(response.output).catch(console.error);
-//       message.channel.stopTyping();
-//     }, Math.random() * (1 - 3) + 1 * 1000);
-//   });
-// }
-    //-----------------CLEVERBOT-----------------
 if (message.content == ('(╯°□°）╯︵ ┻━┻')){
       message.channel.send('┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ) Aweee! Nuu!');
     }else if (message.content == ('ღゝ◡╹)ノ♡')) {
@@ -121,7 +99,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     //-=-=-=-=-=-=-=-=-=-=-FrostMods
           case'ty':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
-          if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Thank for Reporting, Your problem has been solved..')}
+          if (args[1]){message.delete().catch(O_o=>{});message.channel.send('**Solved**, Thank for Reporting '+message.mentions.members.first())}
           else{message.reply(', Usage - d!ty [Mention]')}
           } 
              else {
