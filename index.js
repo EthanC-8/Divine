@@ -100,7 +100,8 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'ty':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1]==message.mentions.members.first()){message.delete().catch(O_o=>{});message.channel.send('**Solved**, Thanks for Reporting '+message.mentions.members.first())}
-          else{message.reply(' Usage - d!ty [Mention]')}
+          else if(args[2]==message.mentions.members.first()){message.delete().catch(O_o=>{});message.channel.send('**Solved**, Thanks for Reporting '+message.mentions.members.first())}
+            else{message.reply(' Usage - d!ty [Mention]')}
           } 
              else {
                message.channel.send('You dont have Permission to use this Command');
