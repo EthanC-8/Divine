@@ -70,7 +70,11 @@ var chathelp = [
 //--------------------------------------
 bot.on('ready', () => {
   console.log('Online!');
-  bot.user.setGame('d!help | Being Useful')
+//   bot.user.setGame('d!help | Being Useful')
+  bot.user.setActivity('d!help | Adventure Awaits', {
+    type: 'STREAMING',
+    url: 'https://twitch.tv/EshanEC',
+  });
   bot.user.setStatus("online")
 });
 
