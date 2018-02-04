@@ -97,11 +97,26 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           console.log(`(Divine) ${message.author.id}: ${message.content}`);
       
            switch (args[0].toLowerCase()) {
-    //-=-=-=-=-=-=-=-=-=-=-FrostMods
+			   
+    //-=-=-=-=-FrostRealms
+          case"coland":
+          message.channel.send('Coland is love :heart: Coland is life!! ColorPixeled :revolving_hearts: Aland ');
+          break;
+          case"cleanza":
+          message.channel.send('Cleanza : Iza :revolving_hearts: Cleaner');
+          break;
+          case"kalishan":
+          message.channel.send('Kalishan?? Well, its a love Story of Kalimzoo :heart: KishanSital');
+          break;
+
+
+          //-=-FrostMods
+          
+          
           case'ty':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
-          if (args[1]){message.delete().catch(O_o=>{});message.channel.send('**Solved**, Thanks for Reporting '+message.mentions.members.first())}
-            else{message.reply(' Usage - d!ty [Mention]')}
+          if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Thank for Reporting, Your problem has been solved..')}
+          else{message.reply(', Usage - d!ty [Mention]')}
           } 
              else {
                message.channel.send('You dont have Permission to use this Command');
@@ -110,7 +125,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'ss':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
             if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Cropped screenshots are not accepted..')}
-            else{message.reply(' Usage - d!ss [Mention]')}
+            else{message.reply(', Usage - d!ss [Mention]')}
             } 
                else {
                  message.channel.send('You dont have Permission to use this Command');
@@ -119,7 +134,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'inv':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
             if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', You have submitted an False report, Case Closed.')}
-            else{message.reply(' Usage - d!inv [Mention]')}
+            else{message.reply(', Usage - d!inv [Mention]')}
             } 
                else {
                  message.channel.send('You dont have Permission to use this Command');
@@ -128,7 +143,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
           case'proof':
           if (message.member.hasPermission("MANAGE_MESSAGES")) {
             if (args[1]){message.delete().catch(O_o=>{});message.channel.send(message.mentions.members.first()+', Please provid a valid Proof')}
-            else{message.reply(' Usage - d!proof [Mention]')}
+            else{message.reply(', Usage - d!proof [Mention]')}
             } 
                else {
                  message.channel.send('You dont have Permission to use this Command');
@@ -348,25 +363,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
             .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
             message.channel.send(embed);
             break;
-             case 'weather':
-             loc = content.substring(prefixlength + 8)
-			if (!loc) {
-				m.channel.sendMessage("You need to supply a City!")
-				return
-			}
-			weather.find({
-				search: loc,
-				degreeType: 'C'
-			}, function(err, result) {
-				if (err) {
-					m.channel.sendMessage(err)
-				};
-
-
-
-				m.channel.sendMessage("Weather for: " + result[0].location.name + "\nTemperature: " + result[0].current.temperature + "°C\nFeels like: " + result[0].current.feelslike + "°C\n" + result[0].current.skytext + "\n" + result[0].current.humidity + "% Humidity \nWind Speed: " + result[0].current.winddisplay)
-			});
-         break;
+;
             //-----------=[Music Commands]=----------
     
             case 'play':
@@ -467,8 +464,6 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
 
        //-----------=[Moderator Commands]=----------
         case "warn":
-//         let modRole = message.guild.roles.find("name", "[Moderator]");
-//         if(message.member.roles.has(modRole.id)){
            if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1] , args[2]) message.channel.send(message.mentions.members.first()+", You have been warned for breaking a server's law..");
           else message.channel.send("Format-  d!Warn [@user] [Reason]").catch(console.error);
@@ -519,6 +514,21 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
       }
     }
         break;
+        case "mute":
+           if (!message.member.hasPermission("MANAGE_MESSAGES"))
+      return message.reply("Sorry, you don't have permissions to use this!");
+    let membermute = message.mentions.members.first();
+    if(!membermute)
+      return message.reply("Please mention a valid member of this server");
+    if(!membermute.kickable) 
+      return message.reply("I cannot kick this user! Do they have a higher role? Do I have mute permissions?");
+    let reason4mute = args.slice(2).join(' ');
+    if(!reason4mute)
+      return message.reply("Please indicate a reason for the mute!");
+      message.guild.member(membermute).addRole(message.guild.roles.find("name", "muted"));
+    message.reply(`${membermute.user.tag} has been muted by ${message.author.tag} for: ${reason4mute}`)
+        break;
+
         //-----------=[Moderator Commands]=----------
         default:
         console.log("Not a case");
