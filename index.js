@@ -464,6 +464,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     let memberzzz = message.mentions.members.first();
     if(!memberzzz)
       return message.reply("Please mention a valid member of this server");
+               
     if(!memberzzz.kickable) 
       return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     let reason = args.slice(1).join(' ');
@@ -478,6 +479,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     let memberzzzz = message.mentions.members.first();
     if(!memberzzzz)
       return message.reply("Please mention a valid member of this server");
+                     message.guild.member(memberzzzz).ban();
     if(!memberzzzz.bannable) 
       return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
