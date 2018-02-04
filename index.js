@@ -272,8 +272,8 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
             else message.channel.send("Usage - d!Punch [user]").catch(console.error);
             break;
             case'say':
-            let modRolee = message.guild.roles.find("name", "[Contributor]");
-            if(message.member.roles.has(modRolee.id)){
+//             let modRolee = message.guild.roles.find("name", "[Contributor]");
+            if (message.member.hasPermission("KICK_MEMBERS")) {
               if (args[1]){
               const sayMessage = args.join(" ");
             message.delete().catch(O_o=>{}); 
@@ -410,7 +410,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
                 message.reply('Audio Playing :notes: ');
                 console.log('Audio Playing');
             });
-            break;s
+            break;
         case 'skip':
             var server = servers[message.guild.id];
             if (server.dispatcher) server.dispatcher.end();
