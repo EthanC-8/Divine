@@ -3,7 +3,6 @@ const YTDL = require("ytdl-core");
 const YouTube = require("discord-youtube-api");
 const bot = new Discord.Client();
 const prefix = "d!";
-var weather = require('weather-js');
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
