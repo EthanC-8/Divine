@@ -473,7 +473,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     message.reply(`${memberzzz.user.tag} has been kicked by ${message.author.tag} because: ${reason}`)
         break;
              case 'ban':
-           if (!message.member.hasPermission("BANK_MEMBERS"))
+           if (!message.member.hasPermission("BAN_MEMBERS"))
       return message.reply("Sorry, you don't have permissions to use this!");
     
     let memberzzzz = message.mentions.members.first();
