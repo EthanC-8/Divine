@@ -457,18 +457,40 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
              message.channel.send('You dont have Permission to use this Command');
            }
         break;
+               
         case "kick":
-        // let modRolek = message.guild.roles.find("name", "Moderator")
-        // if(message.member.roles.has(modRolek.id)){
-        if (message.member.hasPermission("KICK_MEMBERS")) {
-        if(message.mentions.members.size == 0) { return message.reply("Please mention a user to kick d!kick [@user]");}
-        let kickmember = message.guild.member(message.mentions.members.first()+message.channel.send(message.mentions.members.first()+", has been kicked."));
-        if(!kickmember){return message.reply("That user does not seems vaild");}
-        if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) { return message.channel.send("I dont have the permission (KICK_MEMBER) to do this..");}
-        kickmember.kick().catch(console.error);
-        }
-        else{message.reply(', You dont have permission to use that command..')}
+           if (!message.member.hasPermission("KICK_MEMBERS"))
+      return message.reply("Sorry, you don't have permissions to use this!");
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Please mention a valid member of this server");
+    if(!member.kickable) 
+      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+    let reason = args.slice(1).join(' ');
+    if(!reason)
+      return message.reply("Please indicate a reason for the kick!");
+    await member.kick(reason)
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
+    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`)
         break;
+             case 'ban':
+           if (!message.member.hasPermission("BANK_MEMBERS"))
+      return message.reply("Sorry, you don't have permissions to use this!");
+    
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Please mention a valid member of this server");
+    if(!member.bannable) 
+      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+
+    let reason = args.slice(1).join(' ');
+    if(!reason)
+      return message.reply("Please indicate a reason for the ban!");
+    
+    await member.ban(reason)
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
+    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+               break;
         case "clear":
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
           if (args[1]) {
