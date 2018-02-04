@@ -461,31 +461,31 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
         case "kick":
            if (!message.member.hasPermission("KICK_MEMBERS"))
       return message.reply("Sorry, you don't have permissions to use this!");
-    let member = message.mentions.members.first();
-    if(!member)
+    let memberzzz = message.mentions.members.first();
+    if(!memberzzz)
       return message.reply("Please mention a valid member of this server");
-    if(!member.kickable) 
+    if(!memberzzz.kickable) 
       return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     let reason = args.slice(1).join(' ');
     if(!reason)
       return message.reply("Please indicate a reason for the kick!");
-    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`)
+    message.reply(`${memberzzz.user.tag} has been kicked by ${message.author.tag} because: ${reason}`)
         break;
              case 'ban':
            if (!message.member.hasPermission("BANK_MEMBERS"))
       return message.reply("Sorry, you don't have permissions to use this!");
     
-    let member = message.mentions.members.first();
-    if(!member)
+    let memberzzzz = message.mentions.members.first();
+    if(!memberzzzz)
       return message.reply("Please mention a valid member of this server");
-    if(!member.bannable) 
+    if(!memberzzzz.bannable) 
       return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
     let reason = args.slice(1).join(' ');
     if(!reason)
       return message.reply("Please indicate a reason for the ban!");
     
-    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+    message.reply(`${memberzzzz.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
                break;
         case "clear":
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
