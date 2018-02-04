@@ -273,7 +273,7 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
             break;
             case'say':
 //             let modRolee = message.guild.roles.find("name", "[Contributor]");
-            if (message.member.hasPermission("KICK_MEMBERS")) {
+            if (message.member.hasPermission("BAN_MEMBERS")) {
               if (args[1]){
               const sayMessage = args.join(" ");
             message.delete().catch(O_o=>{}); 
