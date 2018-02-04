@@ -469,7 +469,6 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     let reason = args.slice(1).join(' ');
     if(!reason)
       return message.reply("Please indicate a reason for the kick!");
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`)
         break;
              case 'ban':
@@ -486,7 +485,6 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     if(!reason)
       return message.reply("Please indicate a reason for the ban!");
     
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
                break;
         case "clear":
