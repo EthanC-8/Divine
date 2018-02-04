@@ -464,12 +464,12 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     let memberzzz = message.mentions.members.first();
     if(!memberzzz)
       return message.reply("Please mention a valid member of this server");
-      message.guild.member(memberzzz).kick();
     if(!memberzzz.kickable) 
       return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     let reason = args.slice(2).join(' ');
     if(!reason)
       return message.reply("Please indicate a reason for the kick!");
+                     message.guild.member(memberzzz).kick();
     message.reply(`${memberzzz.user.tag} has been kicked by ${message.author.tag} because: ${reason}`)
         break;
              case 'ban':
@@ -479,14 +479,12 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
     let memberzzzz = message.mentions.members.first();
     if(!memberzzzz)
       return message.reply("Please mention a valid member of this server");
-                     message.guild.member(memberzzzz).ban();
     if(!memberzzzz.bannable) 
       return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
-
     let reasonss = args.slice(2).join(' ');
     if(!reasonss)
       return message.reply("Please indicate a reason for the ban!");
-    
+    message.guild.member(memberzzzz).ban();
     message.reply(`${memberzzzz.user.tag} has been banned by ${message.author.tag} because: ${reasonss}`);
                break;
         case "clear":
