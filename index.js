@@ -5,9 +5,6 @@ const bot = new Discord.Client();
 const prefix = "d!";
 const sql = require("sqlite");
 sql.open("./score.sqlite");
-// const Cleverbot = require("cleverbot");
-// const clbot = new Cleverbot;
-// clbot.configure({botapi: "CC5ueu3-r7zIW7y3b7Sr5BYR5sg"});
 
 
 function play(connection, message) {
