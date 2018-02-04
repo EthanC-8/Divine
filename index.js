@@ -3,6 +3,7 @@ const YTDL = require("ytdl-core");
 const YouTube = require("discord-youtube-api");
 const bot = new Discord.Client();
 const prefix = "d!";
+var weather = require('weather-js');
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
@@ -347,6 +348,25 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
             .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
             message.channel.send(embed);
             break;
+             case 'weather':
+             loc = content.substring(prefixlength + 8)
+			if (!loc) {
+				m.channel.sendMessage("You need to supply a City!")
+				return
+			}
+			weather.find({
+				search: loc,
+				degreeType: 'C'
+			}, function(err, result) {
+				if (err) {
+					m.channel.sendMessage(err)
+				};
+
+
+
+				m.channel.sendMessage("Weather for: " + result[0].location.name + "\nTemperature: " + result[0].current.temperature + "°C\nFeels like: " + result[0].current.feelslike + "°C\n" + result[0].current.skytext + "\n" + result[0].current.humidity + "% Humidity \nWind Speed: " + result[0].current.winddisplay)
+			});
+         break;
             //-----------=[Music Commands]=----------
     
             case 'play':
