@@ -199,6 +199,12 @@ if (message.content == ('(╯°□°）╯︵ ┻━┻')){
             .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
             message.channel.send(embed);
             break;
+            case"invite":
+            var embed = new Discord.RichEmbed()
+            .addField("Hey there, here is my invite link :smile:", "https://discordapp.com/api/oauth2/authorize?client_id=370590531937632276&permissions=2146958535&scope=bot" )
+            .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
+            message.channel.send(embed);
+            break;
             case"bored":
             message.channel.send("Thats life, i cant do anything in that xD");
             break;
